@@ -35,17 +35,17 @@ const Experience = () => {
 
   const linkBtn = () => {
     router.push(ExperienceData.location);
-  }
+  };
 
   return (
     <Fragment>
-      <section id='experience' ref={expeRef}>
-        <h2 className='text-3xl font-bold text-center p-4 flex justify-center items-center gap-3'>
+      <section id="experience" ref={expeRef}>
+        <h2 className="text-3xl font-bold text-center p-4 flex justify-center items-center gap-3">
           <MdWork /> Experience
         </h2>
 
         <div
-          className='pop-down-child pb-[30px] px-[20px] shadow-sm shadow-zinc-300 dark:shadow-zinc-700'
+          className="pop-down-child pb-[30px] px-[20px] shadow-sm shadow-zinc-300 dark:shadow-zinc-700"
           ref={expeBoxesRef}
         >
           {ExperienceData.map((experience, index) =>
@@ -57,7 +57,7 @@ const Experience = () => {
                 key={experience.companyName}
               >
                 <div
-                  className='md:w-[45%] cursor-pointer p-3 border border-zinc-300 dark:border-zinc-700 shadow-zinc-300 dark:shadow-zinc-700 shadow-sm rounded'
+                  className="md:w-[45%] cursor-pointer p-3 border border-zinc-300 dark:border-zinc-700 shadow-zinc-300 dark:shadow-zinc-700 shadow-sm rounded"
                   onClick={() =>
                     setDesc(
                       desc === experience.description
@@ -66,22 +66,22 @@ const Experience = () => {
                     )
                   }
                 >
-                  <div className='flex justify-between gap-2'>
-                    <p className='text-xl md:text-2xl font-bold text-red-600'>
+                  <div className="flex justify-between gap-2">
+                    <p className="text-xl md:text-2xl font-bold text-red-600">
                       {experience.companyName}
                     </p>
-                    <p className='flex gap-2 items-center text-blue-500'>
-                       {experience.location}
+                    <p className="flex gap-2 items-center text-blue-500">
+                      {experience.location}
                     </p>
                   </div>
 
-                  <div className='flex justify-between text-gray-600 dark:text-gray-400 gap-2 mt-2'>
-                    <p className='font-semibold'>{experience.role}</p>
+                  <div className="flex justify-between text-gray-600 dark:text-gray-400 gap-2 mt-2">
+                    <p className="font-semibold">{experience.role}</p>
                     <p>{experience.fromTo}</p>
                   </div>
 
                   <p
-                    className='mt-2 text-justify transition-all duration-500 overflow-hidden text-gray-700 dark:text-gray-500'
+                    className="mt-2 text-justify transition-all duration-500 overflow-hidden text-gray-700 dark:text-gray-500"
                     style={
                       desc == experience.description
                         ? { maxHeight: "400px" }
@@ -92,7 +92,7 @@ const Experience = () => {
                   </p>
                 </div>
                 <button
-                  className='transition-all duration-500 hidden md:block'
+                  className="transition-all duration-500 hidden md:block"
                   onClick={() =>
                     setDesc(
                       desc === experience.description
@@ -111,11 +111,11 @@ const Experience = () => {
               </div>
             ) : (
               <div
-                className='md:flex justify-end items-end mt-7 gap-2 transition-all duration-500 '
+                className="md:flex justify-end items-end mt-7 gap-2 transition-all duration-500 "
                 key={experience.companyName}
               >
                 <button
-                  className='hidden md:block'
+                  className="hidden md:block"
                   onClick={() =>
                     setDesc(
                       desc === experience.description
@@ -132,7 +132,7 @@ const Experience = () => {
                   <BsArrowDownCircle size={22} />
                 </button>
                 <div
-                  className='md:w-[45%] cursor-pointer  transition-all duration-500 p-3 border border-zinc-300 dark:border-zinc-700 shadow-zinc-300 dark:shadow-zinc-700 shadow-smrounded'
+                  className="md:w-[45%] cursor-pointer  transition-all duration-500 p-3 border border-zinc-300 dark:border-zinc-700 shadow-zinc-300 dark:shadow-zinc-700 shadow-smrounded"
                   onClick={() =>
                     setDesc(
                       desc === experience.description
@@ -141,21 +141,21 @@ const Experience = () => {
                     )
                   }
                 >
-                  <div className='flex justify-between gap-2'>
-                    <p className='text-xl md:text-2xl font-bold text-red-600'>
+                  <div className="flex justify-between gap-2">
+                    <p className="text-xl md:text-2xl font-bold text-red-600">
                       {experience.companyName}
                     </p>
-                    <p className='flex gap-2 items-center text-blue-500'>
+                    <p className="flex gap-2 items-center text-blue-500">
                       {experience.location}
                     </p>
                   </div>
 
-                  <div className='flex justify-between text-gray-600 dark:text-gray-400 mt-2 gap-2'>
-                    <p className='font-semibold'>{experience.role}</p>
+                  <div className="flex justify-between text-gray-600 dark:text-gray-400 mt-2 gap-2">
+                    <p className="font-semibold">{experience.role}</p>
                     <p>{experience.fromTo}</p>
                   </div>
                   <p
-                    className='mt-2 overflow-hidden transition-all duration-500 text-justify text-gray-700 dark:text-gray-500'
+                    className="mt-2 overflow-hidden transition-all duration-500 text-justify text-gray-700 dark:text-gray-500"
                     style={
                       desc == experience.description
                         ? { maxHeight: "400px" }

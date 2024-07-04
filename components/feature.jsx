@@ -5,7 +5,6 @@ import FireAuth from "./auth/fireAuth";
 import SupaAuth from "./auth/supabaseAuth";
 import { useRouter } from "next/router";
 
-
 const Feature = () => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
@@ -33,8 +32,6 @@ const Feature = () => {
     setSupa(true);
   };
 
-  
-
   const handlePayment = async () => {
     router.push("https://razorpay.me/@stylers");
   };
@@ -44,22 +41,20 @@ const Feature = () => {
         <div>
           <p className="font-serif font-bold text-3xl">Features</p>
         </div>
-       
-          <div className="grid md:grid-cols-3 grid-cols-1 md:gap-16 gap-8 text-xl py-8">
-            <p
-              onClick={handleOpen}
-              className="shadow-lg shadow-red-600 px-8 rounded-lg hover:cursor-pointer hover:translate-y-2 hover:transition hover:ease-in-out hover:shadow-purple-600 py-4 bg-slate-950"
-            >
-              Authentication
-            </p>
-            <p
-              onClick={handlePayment}
-              className="shadow-lg shadow-red-600 px-8 rounded-lg hover:cursor-pointer hover:translate-y-2 hover:transition hover:ease-in-out hover:shadow-purple-600 py-4 bg-slate-950"
-            >
-              Payment gateway
-            </p>
-            
-     
+
+        <div className="grid md:grid-cols-3 grid-cols-1 md:gap-16 gap-8 text-xl py-8">
+          <p
+            onClick={handleOpen}
+            className="shadow-lg shadow-red-600 px-8 rounded-lg hover:cursor-pointer hover:translate-y-2 hover:transition hover:ease-in-out hover:shadow-purple-600 py-4 bg-black text-white"
+          >
+            Authentication
+          </p>
+          <p
+            onClick={handlePayment}
+            className="shadow-lg shadow-red-600 px-8 rounded-lg hover:cursor-pointer hover:translate-y-2 hover:transition hover:ease-in-out hover:shadow-purple-600 py-4 bg-black text-white"
+          >
+            Payment gateway
+          </p>
         </div>
       </div>
       <Dialog open={open} onClose={() => setOpen(false)}>
@@ -94,7 +89,6 @@ const Feature = () => {
       <Dialog open={localAuth} onClose={() => setLocAuth(false)}>
         <LocalAuth setLocAuth={setLocAuth} />
       </Dialog>
-      
     </>
   );
 };
