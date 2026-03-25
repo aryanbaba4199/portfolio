@@ -6,11 +6,11 @@
 
 ###
 
-<h4 align="left">My Name is Raushan Kumar I am a full Stack Developer in MERN Stack with 3+ years of experience. Over the years i own my skills in React Native and also have 1+ years of experience.</h4>
+<h4 align="left">My Name is Raushan Kumar I am a full Stack Developer in MERN Stack with 3+ years of experience. Over the years i own my skills in React Native and also have 5+ years of experience.</h4>
 
 ###
 
-<p align="left">✨ Full Stack Developer<br>📚 Learning  :  AWS lambda<br>🎯 Experience : 3+ years</p>
+<p align="left">✨ Full Stack Developer<br>📚 Learning  :  Langchan<br>🎯 Experience : 5+ years</p>
 
 ###
 
