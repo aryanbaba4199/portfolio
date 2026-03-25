@@ -6,7 +6,7 @@
 
 ###
 
-<h4 align="left">My Name is Raushan Kumar I am a full Stack Developer in MERN Stack with 3+ years of experience. Over the years i own my skills in React Native and also have 5+ years of experience.</h4>
+<h4 align="left">My Name is Raushan Kumar I am a full Stack Developer in MERN Stack with 5+ years of experience. Over the years i own my skills in NextJs, NestJs and FastApi.</h4>
 
 ###
 
