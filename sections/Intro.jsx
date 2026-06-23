@@ -5,6 +5,7 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import styles from "../styles/style.module.css"; // importing the CSS module
 import Link from "next/link";
+import { mydetails } from "@/constants/appinfo";
 
 const Intro = () => {
   useEffect(() => {
@@ -20,7 +21,11 @@ const Intro = () => {
 
   return (
     <div className="flex justify-between items-center h-screen md:mx-16 px-4 gap-16 w-[90%] flex-wrap">
-      <div data-aos="fade-right" data-aos-duration="300" className="md:w-[50%] w-[100%]">
+      <div
+        data-aos="fade-right"
+        data-aos-duration="300"
+        className="md:w-[50%] w-[100%]"
+      >
         <h2
           data-aos="fade-up"
           data-aos-delay="300"
@@ -28,13 +33,24 @@ const Intro = () => {
         >
           Hi there
         </h2>
-        <p data-aos = 'fade-up' data-aos-duration = '500' className=" mt-8 md:text-4xl text-2xl font-serif mb-4">I am a </p>
+        <p
+          data-aos="fade-up"
+          data-aos-duration="500"
+          className=" mt-8 md:text-4xl text-2xl font-serif mb-4"
+        >
+          I am a{" "}
+        </p>
         <div className="flex justify-center md:gap-8 gap-4">
           <div
             className={`md:text-5xl text-2xl font-semibold font-serif md:ml-32  ${styles.animatedText}`}
           >
             {letters.map((letter, index) => (
-              <span key={index} className={styles.letter} data-aos = 'fade-up' data-aos-duration = '1000'>
+              <span
+                key={index}
+                className={styles.letter}
+                data-aos="fade-up"
+                data-aos-duration="1000"
+              >
                 {letter}
               </span>
             ))}
@@ -60,9 +76,7 @@ const Intro = () => {
             >
               {developer.map((letter, index) => (
                 <span key={index} className={styles.letter}>
-                  <p className="text-cyan-400 hover:text-white">
-                    {letter}
-                  </p>
+                  <p className="text-cyan-400 hover:text-white">{letter}</p>
                 </span>
               ))}
             </div>
@@ -83,16 +97,35 @@ const Intro = () => {
             </div>
           </h3>
         </div>
-        <p className="font-serif mt-4" data-aos='fade-up' data-aos-duration = '1500'>
-          Highly motivated Full-Stack Developer with 3+ years of experience
-          building web applications using the MERN stack (MongoDB, Express.js,
-          React, Node.js) and Next.js.Over the Years i also gain my skills in React Native for Android and IOS development, i also have an experience in .net core framework and Java. Currently i am learning DevOps. I'm passionate about creating
-          user-friendly, performant, and scalable web experiences.
+        <p
+          className="font-serif mt-4"
+          data-aos="fade-up"
+          data-aos-duration="1500"
+        >
+          {mydetails.about}
         </p>
-        <div className="mt-16 flex justify-center gap-8" data-aos ='fade-up' data-aos-duration = '4000'>
-        <Link href="/#getInTouch" data-aos ='fade-up' data-aos-duration='1000' className="bg-cyan-600 px-8 py-2 font-semibold shadow-lg hover:shadow-red-600 rounded-lg hover:text-blue-600 hover:bg-white active:bg-green-600 active:text-white active:translate-y-1 hover:cursor-pointer">Hire Me </Link>
-        <Link  href = "https://drive.google.com/file/d/1yCCpn7uuFrwNpJb05q9cgkQ40MQR6IAY/view?usp=drive_link"data-aos ='fade-up' data-aos-duration='1000'  className="bg-blue-600 px-8 py-2 font-semibold shadow-lg hover:shadow-red-600 rounded-lg hover:text-blue-600 hover:bg-white active:bg-green-600 active:text-white active:translate-y-1 hover:cursor-pointer">Download CV </Link>
-      </div>
+        <div
+          className="mt-16 flex justify-center gap-8"
+          data-aos="fade-up"
+          data-aos-duration="4000"
+        >
+          <Link
+            href="/#getInTouch"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="bg-cyan-600 px-8 py-2 font-semibold shadow-lg hover:shadow-red-600 rounded-lg hover:text-blue-600 hover:bg-white active:bg-green-600 active:text-white active:translate-y-1 hover:cursor-pointer"
+          >
+            Hire Me{" "}
+          </Link>
+          <Link
+            href="https://drive.google.com/file/d/1yCCpn7uuFrwNpJb05q9cgkQ40MQR6IAY/view?usp=drive_link"
+            data-aos="fade-up"
+            data-aos-duration="1000"
+            className="bg-blue-600 px-8 py-2 font-semibold shadow-lg hover:shadow-red-600 rounded-lg hover:text-blue-600 hover:bg-white active:bg-green-600 active:text-white active:translate-y-1 hover:cursor-pointer"
+          >
+            Download CV{" "}
+          </Link>
+        </div>
       </div>
       <div className="md:block hidden">
         <Image
@@ -104,7 +137,6 @@ const Intro = () => {
           alt="MERN Stack Developer"
         />
       </div>
-      
     </div>
   );
 };

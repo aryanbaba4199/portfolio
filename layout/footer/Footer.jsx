@@ -11,7 +11,6 @@ import { SiUpwork } from "react-icons/si";
 import { SiFiverr } from "react-icons/si";
 import { SiFreelancer } from "react-icons/si";
 
-
 const Footer = () => {
   return (
     <Fragment>
@@ -43,6 +42,16 @@ const Footer = () => {
               className=" flex flex-col justify-center items-center
             shadow-lg shadow-red-600 px-8 py-2  duration-500 mt-4 hover:ease-in-out hover:transform hover:text-3xl hover:text-black hover:bg-white"
             >
+              <Link href="https://www.linkedin.com/in/aryanbaba4199/">
+                <FaLinkedinIn className="text-blue-600 text-3xl" />
+                <p className="font-semibold my-1">LinkedIn</p>
+              </Link>
+            </div>
+
+            <div
+              className=" flex flex-col justify-center items-center
+            shadow-lg shadow-red-600 px-8 py-2  duration-500 mt-4 hover:ease-in-out hover:transform hover:text-3xl hover:text-black hover:bg-white"
+            >
               <Link href="https://wa.me/917005742790">
                 <IoLogoWhatsapp className="text-green-600 text-3xl" />
                 <p className="font-semibold my-1">Whatsapp</p>
@@ -58,44 +67,7 @@ const Footer = () => {
                 <p className="font-semibold my-1">Instagram</p>
               </Link>
             </div>
-            <div
-              className=" flex flex-col justify-center items-center
-            shadow-lg shadow-red-600 px-8 py-2  duration-500 mt-4 hover:ease-in-out hover:transform hover:text-3xl hover:text-black hover:bg-white"
-            >
-               <Link href="https://www.linkedin.com/in/aryanbaba4199/">
-              <FaLinkedinIn className="text-blue-600 text-3xl" />
-                <p className="font-semibold my-1">LinkedIn</p>
-              </Link>
-            </div>
 
-            <div
-              className=" flex flex-col justify-center items-center
-            shadow-lg shadow-red-600 px-8 py-2  duration-500 mt-4 hover:ease-in-out hover:transform hover:text-3xl hover:text-black hover:bg-white"
-            >
-               <Link href="https://www.upwork.com/freelancers/~01269527774139bddd">
-               <SiUpwork className="text-green-600 text-3xl" />
-                <p className="font-semibold my-1">Upwork</p>
-              </Link>
-            </div>
-            <div
-              className=" flex flex-col justify-center items-center
-            shadow-lg shadow-red-600 px-8 py-2  duration-500 mt-4 hover:ease-in-out hover:transform hover:text-3xl hover:text-black hover:bg-white"
-            >
-               <Link href="https://www.fiverr.com/aryanbaba4199?up_rollout=true">
-               <SiFiverr  className="text-green-600 text-3xl" />
-                <p className="font-semibold my-1">Fiverr</p>
-              </Link>
-            </div>
-            <div
-              className=" flex flex-col justify-center items-center
-            shadow-lg shadow-red-600 px-8 py-2  duration-500 mt-4 hover:ease-in-out hover:transform hover:text-3xl hover:text-black hover:bg-white"
-            >
-               <Link href="https://www.freelancer.in/u/aryanbaba4199">
-               <SiFreelancer  className="text-cyan-600 text-3xl" />
-                <p className="font-semibold my-1">Freelancer</p>
-              </Link>
-            </div>
-            
             <div
               className=" flex flex-col justify-center items-center
             shadow-lg shadow-red-600 px-8 py-2  duration-500 mt-4 hover:ease-in-out hover:transform hover:text-3xl hover:text-black hover:bg-white"
@@ -115,7 +87,6 @@ const Footer = () => {
               </Link>
             </div>
           </div>
-          
         </div>
       </>
     </Fragment>

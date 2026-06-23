@@ -6,6 +6,7 @@ import { ImLocation } from "react-icons/im";
 import { IoPerson } from "react-icons/io5";
 import { BsMenuAppFill } from "react-icons/bs";
 import My from "../public/images/mydp.jpg";
+import { mydetails } from "@/constants/appinfo";
 const About = () => {
   const [isAbout, setIsAbout] = useState(false);
 
@@ -27,7 +28,7 @@ const About = () => {
         },
         {
           rootMargin: `${getScreenWidth() <= 700 ? "-100px" : "-300px"}`,
-        }
+        },
       );
 
       aboutObserver.observe(aboutRef.current);
@@ -70,11 +71,11 @@ const About = () => {
           >
             {/* Full Name */}
             <p className="text-3xl text-center md:text-left font-semibold text-[#c72c6c] dark:text-[#07d0e5]">
-              Raushan Kumar
+              {mydetails.name}
             </p>
             {/* Profil Name */}
             <p className="text-center md:text-left text-red-600 mt-1">
-              Full stack web developer
+              {mydetails.designation}
             </p>
             {/* Location */}
             <div className="flex flex-wrap justify-center md:justify-normal gap-5">
@@ -88,7 +89,7 @@ const About = () => {
                   </p>
                 </div>
                 <p className="text-center md:text-left text-[#0b0c0c] dark:text-[#07d0e5]">
-                  Muzaffarpur, Bihar, India{" "}
+                  {mydetails.location}
                 </p>
               </div>
               {/* Age */}
@@ -102,7 +103,7 @@ const About = () => {
                   </p>
                 </div>
                 <p className="text-center md:text-left text-[#c72c6c] dark:text-[#07d0e5]">
-                  25{" "}
+                  {mydetails.age}
                 </p>
               </div>
               {/* Experience */}
@@ -116,7 +117,7 @@ const About = () => {
                   </p>
                 </div>
                 <p className="text-center md:text-left text-[#c72c6c] dark:text-[#07d0e5]">
-                  3 Years{" "}
+                  {mydetails.Experience}
                 </p>
               </div>
               {/* Project */}
@@ -130,20 +131,14 @@ const About = () => {
                   </p>
                 </div>
                 <p className="text-center md:text-left text-[#c72c6c] dark:text-[#07d0e5]">
-                  37{" "}
+                  {mydetails.projects}
                 </p>
               </div>
             </div>
 
             <div className="mt-5 justify-evenly text-justify">
               <p className="text-gray-600 dark:text-gray-300">
-                Passionate and driven ReactJS developer with a strong foundation
-                in MERN Stack and NextJS. Dedicated to creating dynamic and
-                user-centric web applications. Eager to contribute my expertise
-                in frontend frameworks, modern UI/UX design, responsive and
-                backend development to a forward-thinking team, while
-                continuously learning and growing in the ever-evolving world of
-                web development.
+                {mydetails.about}
               </p>
             </div>
           </div>

@@ -1,16 +1,24 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import Image from 'next/image';
-import { Box, Paper, TextField, IconButton, Typography, Avatar } from '@mui/material';
-import SendIcon from '@mui/icons-material/Send';
-import Nav from '@/layout/navbar/Navbar';
-import Footer from '@/layout/footer/Footer';
+import React, { useState } from "react";
+import axios from "axios";
+import Image from "next/image";
+import {
+  Box,
+  Paper,
+  TextField,
+  IconButton,
+  Typography,
+  Avatar,
+} from "@mui/material";
+import SendIcon from "@mui/icons-material/Send";
+import Nav from "@/layout/navbar/Navbar";
+import Footer from "@/layout/footer/Footer";
 import MyImage from "@/public/images/mydp.jpg";
-import StarsCanvas from '@/components/starcanvas';
+import StarsCanvas from "@/components/starcanvas";
+import { mydetails } from "@/constants/appinfo";
 
 const Chatbot = () => {
   const [messages, setMessages] = useState([]);
-  const [input, setInput] = useState('');
+  const [input, setInput] = useState("");
 
   const gptAnswer = async () => {
     try {
@@ -32,13 +40,13 @@ const Chatbot = () => {
     if (input.trim()) {
       const userMessage = { text: input, user: true };
       setMessages([...messages, userMessage]);
-      setInput('');
+      setInput("");
 
       try {
-        const response = await fetch('https://your-api-endpoint.com/chatbot', {
-          method: 'POST',
+        const response = await fetch("https://your-api-endpoint.com/chatbot", {
+          method: "POST",
           headers: {
-            'Content-Type': 'application/json',
+            "Content-Type": "application/json",
           },
           body: JSON.stringify({ message: input }),
         });
@@ -52,7 +60,10 @@ const Chatbot = () => {
             setMessages((prevMessages) => [...prevMessages, botMessage]);
           }
         } else {
-          const errorMessage = { text: 'Error: Could not fetch response from the server.', user: false };
+          const errorMessage = {
+            text: "Error: Could not fetch response from the server.",
+            user: false,
+          };
           setMessages((prevMessages) => [...prevMessages, errorMessage]);
         }
       } catch (error) {
@@ -63,41 +74,55 @@ const Chatbot = () => {
 
   return (
     <>
-    <StarsCanvas/>
+      <StarsCanvas />
       <Nav />
-      
+
       <div className="w-full flex justify-center items-center min-h-screen my-8">
         <div className="md:flex grid w-full max-w-screen-lg space-x-1">
           <div className="flex-1 hidden justify-center items-center md:flex">
-            <Image src={MyImage} className='w-96 pr-12' alt="Raushan Kumar" />
+            <Image src={MyImage} className="w-96 pr-12" alt="Raushan Kumar" />
           </div>
           <Paper className="flex-1 flex flex-col p-4 md:mt-0 mt-4 shadow-lg bg-slate-600">
-            <div className='text-white flex flex-col justify-center items-center'>
+            <div className="text-white flex flex-col justify-center items-center">
               <img
                 src="https://cdn-icons-png.flaticon.com/256/8943/8943377.png"
-                className='w-24 h-24'
+                className="w-24 h-24"
                 alt="Chatbot Avatar"
               />
-              <p className='bg-black px-2 rounded-md mb-8'>Hi I am Raushan's Chatbot</p>
+              <p className="bg-black px-2 rounded-md mb-8">
+                Hi I am Raushan's Chatbot
+              </p>
             </div>
             <Box className="flex flex-col space-y-2 overflow-auto md:h-80 h-[65vh] mb-4">
               {messages.map((message, index) => (
                 <Box
                   key={index}
-                  className={`flex ${message.user ? 'justify-end' : 'justify-start'}`}
+                  className={`flex ${
+                    message.user ? "justify-end" : "justify-start"
+                  }`}
                 >
-                  <Box className={`flex items-center ${message.user ? 'flex-row-reverse' : 'flex-row'}`}>
+                  <Box
+                    className={`flex items-center ${
+                      message.user ? "flex-row-reverse" : "flex-row"
+                    }`}
+                  >
                     <Avatar className="mx-2">
-                      {message.user ? 'U' : (
+                      {message.user ? (
+                        "U"
+                      ) : (
                         <img
                           src="https://cdn-icons-png.flaticon.com/256/8943/8943377.png"
-                          className='pt-1'
+                          className="pt-1"
                           alt="Bot Avatar"
                         />
                       )}
                     </Avatar>
                     <Typography
-                      className={`p-2 rounded-lg ${message.user ? 'bg-blue-500 text-white' : 'bg-slate-950 text-white'}`}
+                      className={`p-2 rounded-lg ${
+                        message.user
+                          ? "bg-blue-500 text-white"
+                          : "bg-slate-950 text-white"
+                      }`}
                     >
                       {message.text}
                     </Typography>
@@ -112,7 +137,7 @@ const Chatbot = () => {
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={(e) => {
-                  if (e.key === 'Enter') handleSend();
+                  if (e.key === "Enter") handleSend();
                 }}
                 className="flex-grow"
               />
@@ -122,16 +147,13 @@ const Chatbot = () => {
             </Box>
           </Paper>
           <div className="flex-1">
-            <div className='flex md:pl-12 pl-2 md:px-0 px-4 md:pt-32 pt-8 flex-col justify-center items-center'>
-            <p className='font-serif text-4xl'>Raushan Kumar</p>
-            <p className='text-xl font-semibold mt-3'>Full Stack Developer</p>
-            <p className='text-xl font-semibold '>MERN Stack Developer</p>
-            <p className='mt-4'>
-              Highly motivated Full-Stack Developer with 3+ years of experience
-              building web applications using the MERN stack (MongoDB, Express.js,
-              React, Node.js) and Next.js. I'm passionate about creating user-friendly,
-              performant, and scalable web experiences.
-            </p>
+            <div className="flex md:pl-12 pl-2 md:px-0 px-4 md:pt-32 pt-8 flex-col justify-center items-center">
+              <p className="font-serif text-4xl">Raushan Kumar</p>
+              <p className="text-xl font-semibold mt-3">
+                {mydetails.designation}
+              </p>
+              <p className="text-xl font-semibold ">{mydetails.Experience}</p>
+              <p className="mt-4">{mydetails.about}</p>
             </div>
           </div>
         </div>

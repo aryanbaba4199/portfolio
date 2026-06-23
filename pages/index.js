@@ -68,7 +68,7 @@ const Home = () => {
           <About />
           <Footer />
           <Features />
-          <Services/>
+          <Services />
           {/* Skills  */}
           <Skills />
           {/* Education */}
@@ -95,7 +95,7 @@ const Home = () => {
           </div>
 
           <div className=" flex justify-end items-center text-gray-500 px-5 py-4">
-            <p>Developd by Raushan Kumar : +919835776768 </p>
+            <p>Raushan Kumar: +91-7005742790 </p>
           </div>
         </div>
       </div>
