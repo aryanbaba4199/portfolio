@@ -67,10 +67,10 @@ const Home = () => {
           {/* About */}
           <About />
           <Footer />
-          <Features />
+          <Skills />
           <Services />
           {/* Skills  */}
-          <Skills />
+
           {/* Education */}
           <Education />
 
